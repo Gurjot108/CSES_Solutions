@@ -1,0 +1,29 @@
+#include <bits/stdc++.h>
+using namespace std;
+using ll = long long;
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    ll n;
+    cin >> n;
+    vector<ll> arr;
+    for (int i = 0; i < n; i++)
+    {
+        ll a;
+        cin >> a;
+        arr.push_back(a);
+    }
+
+    sort(arr.begin(), arr.end());
+    ll current = 0;
+    for (auto a : arr)
+    {
+        if (a > current + 1)
+            break;
+        current += a;
+    }
+    cout << current + 1 << "\n";
+
+    return 0;
+}
